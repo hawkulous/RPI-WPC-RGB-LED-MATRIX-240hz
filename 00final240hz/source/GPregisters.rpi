@@ -1,0 +1,145 @@
+//Raspberry Pi B+ Registers
+// not all used but saves some typing
+//GPIO
+.equ GPIO_BASE_REG,0x20200000
+
+.equ GPFSEL0,0x20200000
+.equ GPFSEL1,0x20200004
+.equ GPFSEL2,0x20200008
+.equ GPFSEL3,0x2020000c
+.equ GPFSEL4,0x20200010
+.equ GPFSEL5,0x20200014
+
+.equ GPSET0,0x2020001c
+.equ GPSET1,0x20200020
+
+.equ GPSET0PHYS,0x7E20001c
+.equ GPSET1PHYS,0x7E200020
+
+.equ GPCLR0,0x20200028
+.equ GPCLR1,0x2020002c
+
+.equ GPCLR0PHYS,0x7E200028
+.equ GPCLR1PHYS,0x7E20002c
+
+.equ GPLEV0,0x20200034
+.equ GPLEV1,0x20200038
+
+.equ GPLEV0PHYS,0x7E200034
+
+.equ GPEDS0,0x20200040
+.equ GPEDS1,0x20200044
+
+.equ GPREN0,0x2020004c
+.equ GPREN1,0x20200050
+
+.equ GPFEN0,0x20200058
+.equ GPFEN1,0x2020005c
+
+.equ GPHEN0,0x20200064
+.equ GPHEN1,0x20200068
+
+.equ GPLEN0,0x20200070
+.equ GPLEN1,0x20200074
+
+.equ GPAREN0,0x2020007c
+.equ GPAREN1,0x20200080
+
+.equ GPAFEN0,0x20200088
+.equ GPAFEN1,0x2020008c
+
+.equ GPPUD,0x20200094
+.equ GPPUDCLK0,0x20200098
+.equ GPPUDCLK1,0x2020009c
+
+.equ BASICTIMER,0x20003004
+//And this will make it easy peasy
+
+.equ PIN0,1
+.equ PIN1,2
+.equ PIN2,4
+.equ PIN3,8
+.equ PIN4,16
+.equ PIN5,32
+.equ PIN6,64
+.equ PIN7,128
+.equ PIN8,256
+.equ PIN9,512
+.equ PIN10,1024
+.equ PIN11,2048
+.equ PIN12,4096
+.equ PIN13,8192
+.equ PIN14,16384
+.equ PIN15,32768
+.equ PIN16,65536
+
+//more pins from pin 8-20
+.equ LATCH,256     // gpio 8=rpi pin 24
+.equ OE,512         // gpio 9=rpi pin 21
+.equ KLOK,1024     // gpio 10=rpi pin 19 
+.equ RED0, 2048     // gpio 11=rpi pin 23
+.equ GREEN0, 4096     // gpio 12=rpi pin 32
+.equ BLUE0,8192    // gpio 13=rpi pin 33  
+.equ RED1,16384   // gpio 14=rpi pin 8 
+.equ GREEN1, 32768   // gpio 15=rpi pin 10
+.equ BLUE1, 65536   // gpio 16=rpi pin 36
+.equ A0, 131072     // gpio 17=rpi pin 11
+.equ B1, 262144     // gpio 18=rpi pin 12
+.equ C2, 524288     // gpio 19=rpi pin 35
+.equ D3, 1048576    // gpio 20=rpi pin 38
+.equ RGBSUM, 129024 //to clear R0 R1 G0 G1 B0 B1 at once
+.equ ABCDSUM, 1966080 // to clear ABCD at once
+
+.equ DMDCLOCK, 4    //gpio 2
+.equ DMDDATA,  8    //gpio 3
+.equ DMDSTART, 16   //gpio 4
+// IRQ enable disable
+//0x2000B000
+.equ ENABLEIRQ1,0x2000b210
+.equ ENABLEIRQ2,0x2000b214
+.equ ENABLEIRQ3,0x2000b218
+.equ DISABLEIRQ1,0x2000b21c
+.equ DISABLEIRQ2,0x2000b220
+.equ DISABLEIRQ3,0x2000b224
+.equ GPUPENDING1,0x2000b204
+.equ GPUPENDING2,0x2000b208
+
+//dma registers
+.equ DMACH0,0x20007000
+.equ DMACH1,0x20007100
+.equ DMACH2,0x20007200
+.equ DMA0CS,0x20007000
+.equ DMA1CS,0x20007100
+.equ DMA0CONBLKAD,0x20007004
+.equ DMA1CONBLKAD,0x20007104
+.equ DMA0TI,0x20007008
+.equ DMA0SRC,0x2000700c
+.equ DMA0DST,0x20007010
+.equ DMA0TXLEN,0x20007014
+.equ DMA0STRIDE,0x20007018
+.equ DMA0NXTCONBK,0x2000701c
+.equ DMA0DEBUG,0x20007020
+.equ DMAENABLE,0x20007ff0
+
+
+//etc
+/*
+.equ BRIGHTNESS,2048
+.equ COLOUR0,GREEN0 
+.equ COLOUR1,GREEN1 
+*/
+
+/*
+.equ BRIGHTNESS,2048
+.equ COLOUR0,BLUE0 
+.equ COLOUR1,BLUE1 
+*/
+
+
+
+.equ BRIGHTNESS,2048
+.equ COLOUR0,RED0 
+.equ COLOUR1,RED1 
+
+
+
