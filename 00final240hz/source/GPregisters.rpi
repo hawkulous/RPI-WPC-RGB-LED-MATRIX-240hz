@@ -93,7 +93,10 @@
 .equ DMDCLOCK, 4    //gpio 2
 .equ DMDDATA,  8    //gpio 3
 .equ DMDSTART, 16   //gpio 4
-.equ DMDLATCH, 32   //gpio 5
+.equ DMDLATCH ,32
+.equ DMDOE    ,64
+.equ DMDROWCLK ,128
+
 // IRQ enable disable
 //0x2000B000
 .equ ENABLEIRQ1,0x2000b210
@@ -125,22 +128,30 @@
 
 //etc
 /*
-.equ BRIGHTNESS,2048
-.equ COLOUR0,GREEN0 
-.equ COLOUR1,GREEN1 
+//white
+.equ BRIGHTNESS,1024
+.equ COLOUR0,GREEN0 + BLUE0 + RED0 
+.equ COLOUR1,GREEN1 + BLUE1 + RED1
 */
 
 /*
+//blue
 .equ BRIGHTNESS,2048
 .equ COLOUR0,BLUE0 
 .equ COLOUR1,BLUE1 
 */
 
 
+/*
+//yellow
+.equ BRIGHTNESS,1024
+.equ COLOUR0,RED0 + GREEN0
+.equ COLOUR1,RED1 + GREEN1
+*/
 
-.equ BRIGHTNESS,2048
-.equ COLOUR0,RED0 
-.equ COLOUR1,RED1 
-
+//teal
+.equ BRIGHTNESS,1024
+.equ COLOUR0,BLUE0 + GREEN0
+.equ COLOUR1,BLUE1 + GREEN1
 
 
