@@ -2,10 +2,6 @@
 
 setupgpio:
 push {lr}
-//mov r0,the pinnumber
-// mov r1, the function it will be input yeeeah
-// PIN2 for clock,PIN3 for DATA,PIN4 for framestart, PIN5,6,7 for the 74hct393 counter q0,q1,q2
-// PIN 567 will be redundant when there is no clock glitches
 mov r1,#0
 mov r0,#2
 bl SetGpioFunction

@@ -1,9 +1,3 @@
-.section .data
-firsthalf:
-.rept 2048
-.word 0
-.endr
-
 .globl capturedmd
 .include "GPregisters.rpi"
 capturedmd:
@@ -29,6 +23,7 @@ ldr r8,=GPHEN0
 ldr test,=PIN5
 str test,[r8]
 
+
 ldr r8,=GPREN0
 ldr test,=PIN4
 str test,[r8]
@@ -40,7 +35,7 @@ rinse:
 
 
 //look framestart high
-ldr fspin,=PIN4
+
 
 /*
  ///normal polling way
@@ -51,6 +46,7 @@ lookfspin:
 */
 
  
+  ldr fspin,=PIN4
   
     ldr r8,=GPEDS0
     lookfspin:
@@ -72,6 +68,7 @@ str fspin,[r8]
 mov counter3,r10    
     
 keeplooking:
+   
 
 cmp counter2,#8
 bgt clearevent
@@ -205,6 +202,8 @@ lookclkhigh1:
  add counter3,#16640
  add counter3,#32
  mov counter2,#0
+ 
+ 
  sameline:
  
    mov counter,rowcounter
@@ -226,7 +225,7 @@ mov counter2,#0
 mov rowcounter,#0
 //look framestart high
 
-ldr fspin,=PIN4
+
 
      
 /*
@@ -235,6 +234,11 @@ lookfspin2:
     tst test,fspin
     beq lookfspin2
 */
+
+
+ 
+  ldr fspin,=PIN4
+
     ldr r8,=GPEDS0
     lookfspin2:
     ldr test,[r8]
@@ -254,6 +258,9 @@ str fspin,[r8]
     
     
 keeplooking2:
+    
+   
+   
 
 cmp counter2,#8
 bgt clearevent2
@@ -309,6 +316,7 @@ lookclkhigh2:
  add counter3,#16640
  add counter3,#32
  mov counter2,#0
+
 
    thisline2:
    mov counter,rowcounter
